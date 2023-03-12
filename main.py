@@ -2,19 +2,11 @@
 from queue import PriorityQueue
 
 def parse_input_user():
-    n = list(map(int, input().strip().split(' ')))
+    nm = list(map(int, input().strip().split(' ')))
     # print(n)
     data = list(map(int, input().strip().split(' ')))
     # print(data)
-    return n, data
-
-def parse_input_file(file_name):
-    file = open(file_name, "r", -1, "utf-8")
-    n = list(map(int, file.readline().strip().split(' ')))
-    # print(n)
-    data = list(map(int, file.readline().strip().split(' ')))
-    # print(data)
-    return n, data
+    return nm[0], nm[1], data
 
 def parallel_processing(n, m, data):
     output = []
@@ -47,12 +39,7 @@ def main():
         key = input().strip()
         # print(key)
         if (key.upper() == "I"):
-            n, m = parse_input_user()
-        elif (key.upper() == "F"):
-            file_name = input().strip()
-            if (file_name.lower() == "a"):
-                pass
-            n, m = parse_input_file("tests/" + file_name)
+            n, m, data = parse_input_user()
     except:
         pass
 
