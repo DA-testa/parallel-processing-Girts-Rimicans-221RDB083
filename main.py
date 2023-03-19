@@ -35,13 +35,7 @@ def main():
     n, m = 0, 0
     data = []
 
-    try:
-        key = input().strip()
-        # print(key)
-        if (key.upper() == "I"):
-            n, m, data = parse_input_user()
-    except:
-        pass
+    n, m, data = parse_input_user()
 
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
